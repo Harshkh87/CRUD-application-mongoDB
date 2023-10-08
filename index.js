@@ -8,14 +8,16 @@ const app = express();
 app.use(express.json());
 app.use(Router);
 
+// connect mongodb 
 mongoose.connect('mongodb+srv://firstname:lastname@cluster0.dsaf313.mongodb.net/harsh?retryWrites=true&w=majority'
 //   {
-//     useNewUrlParser: true,
+//     useNewUrlParser: true,  
 //     useFindAndModify: false,
 //     useUnifiedTopology: true
 //   }
 );
 
+// check the connection 
 const db = mongoose.connection;
 // db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", function () {
